@@ -1,0 +1,34 @@
+{
+  "name": "Notion Ding!",
+  "description": "Goes ding when you check a checkbox. Yes thats it.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": ["https://*.notion.so/*"],
+      "css": [],
+      "js": ["ding-on-checked.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": ["https://*.notion.so/*"],
+      "resources": ["assets/ding.wav"]
+    }
+  ],
+  "icons": {
+    "16": "assets/ding-icon.16.png",
+    "32": "assets/ding-icon.32.png",
+    "48": "assets/ding-icon.48.png",
+    "128": "assets/ding-icon.128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/ding-icon.16.png",
+      "32": "assets/ding-icon.32.png",
+      "48": "assets/ding-icon.48.png",
+      "128": "assets/ding-icon.128.png"
+    }
+  }
+}

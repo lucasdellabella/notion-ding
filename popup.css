@@ -1,0 +1,46 @@
+.volume-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+}
+
+.volume-controls > * {
+  margin: 0 5px;
+}
+
+#icon {
+  padding: 4px;
+}
+
+#level-container {
+  display: flex;
+  justify-content: center;
+  min-width: 80px;
+}
+
+#level {
+  font-size: 48px;
+  align-items: center;
+}
+
+#level-decorator {
+  font-size: 16px;
+  font-weight: 300;
+  padding: 8px 0;
+  margin-left: -2px;
+  align-self: flex-end;
+}
+
+#quieter,
+#louder {
+  border: 0;
+  border-radius: px;
+  background-color: white;
+}
+
+#quieter:hover,
+#louder:hover {
+  background: rgba(55, 53, 47, 0.08);
+  cursor: pointer;
+}
