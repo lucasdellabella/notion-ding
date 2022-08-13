@@ -16,6 +16,9 @@
       "resources": ["assets/ding.wav"]
     }
   ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "icons": {
     "16": "assets/ding-icon.16.png",
     "32": "assets/ding-icon.32.png",

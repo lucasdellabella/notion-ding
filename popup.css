@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70px;
+  padding: 5px;
 }
 
 .volume-controls > * {
@@ -17,6 +17,8 @@
   display: flex;
   justify-content: center;
   min-width: 80px;
+  background: rgba(55, 53, 47, 0.08);
+  border-radius: 5px;
 }
 
 #level {
@@ -35,12 +37,18 @@
 #quieter,
 #louder {
   border: 0;
-  border-radius: px;
+  border-radius: 5px;
   background-color: white;
 }
 
 #quieter:hover,
 #louder:hover {
   background: rgba(55, 53, 47, 0.08);
+  cursor: pointer;
+}
+
+#quieter:active,
+#louder:active {
+  background: rgba(55, 53, 47, 0.16);
   cursor: pointer;
 }

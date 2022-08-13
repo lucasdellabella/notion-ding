@@ -1,5 +1,4 @@
 const url = chrome.runtime.getURL("assets/ding.wav");
-const ding = new Audio(url);
 
 document.addEventListener("click", (event) => {
   const completed = event.path
@@ -8,6 +7,10 @@ document.addEventListener("click", (event) => {
     .some((classList) => classList.contains("checkboxSquare"));
 
   if (completed) {
-    ding.play();
+    chrome.runtime.sendMessage({ type: "checkVolume" }).then(({ volume }) => {
+      const ding = new Audio(url);
+      ding.volume = Math.exp(3 * volume) / Math.exp(3 * 1);
+      ding.play();
+    });
   }
 });
