@@ -7,9 +7,9 @@ document.addEventListener("click", (event) => {
     .some((classList) => classList.contains("checkboxSquare"));
 
   if (completed) {
-    chrome.runtime.sendMessage({ type: "checkVolume" }).then(({ volume }) => {
+    chrome.storage.sync.get(["volume"], ({ volume }) => {
       const ding = new Audio(url);
-      ding.volume = Math.exp(3 * volume) / Math.exp(3 * 1);
+      ding.volume = Math.exp(4 * volume) / Math.exp(4 * 1);
       ding.play();
     });
   }

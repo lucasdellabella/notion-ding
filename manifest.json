@@ -3,6 +3,7 @@
   "description": "Goes ding when you check a checkbox. Yes thats it.",
   "version": "1.0",
   "manifest_version": 3,
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": ["https://*.notion.so/*"],
