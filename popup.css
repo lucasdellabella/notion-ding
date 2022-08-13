@@ -1,8 +1,22 @@
+:root {
+  --notion-background-color: rgb(251, 251, 250);
+  --notion-hover-color: rgba(55, 53, 47, 0.08);
+  --notion-active-color: rgba(55, 53, 47, 0.16);
+  --notion-font-color: rgba(55, 53, 47, 0.5);
+  --notion-font-color-dark: rgba(55, 53, 47, 0.65);
+}
+
+body {
+  min-height: auto;
+}
+
 .volume-controls {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 5px;
+  background: var(--notion-background-color);
+  border-bottom: 2px dashed var(--notion-active-color);
 }
 
 .volume-controls > * {
@@ -17,7 +31,6 @@
   display: flex;
   justify-content: center;
   min-width: 80px;
-  background: rgba(55, 53, 47, 0.08);
   border-radius: 5px;
 }
 
@@ -34,21 +47,83 @@
   align-self: flex-end;
 }
 
+.email-container {
+  padding: 8px;
+  color: var(--notion-font-color);
+}
+
+.email-input-container {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+}
+
+.email-container > p {
+  font-size: 8px;
+  margin-top: 2px;
+  color: var(--notion-font-color);
+}
+
+.email-label {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px 7px;
+  margin-right: 8px;
+  border-radius: 5px;
+
+  color: var(--notion-font-color-dark);
+  cursor: default;
+}
+
+.email-label > img {
+  margin-right: 8px;
+}
+
+.email-input {
+  min-height: 34px;
+  min-width: 256px;
+  width: 100%;
+  padding: 6px 8px 7px;
+  outline: white;
+}
+
+.email-input:focus:not(:active) {
+  background: white;
+  box-shadow: rgb(15 15 15 / 5%) 0px 0px 0px 1px,
+    rgb(15 15 15 / 10%) 0px 3px 6px, rgb(15 15 15 / 20%) 0px 9px 24px;
+}
+
 #quieter,
-#louder {
+#louder,
+.email-input {
   border: 0;
   border-radius: 5px;
   background-color: white;
+  cursor: pointer;
 }
 
 #quieter:hover,
-#louder:hover {
-  background: rgba(55, 53, 47, 0.08);
-  cursor: pointer;
+#louder:hover,
+.email-label:hover,
+.email-input:hover {
+  background: var(--notion-hover-color);
 }
 
 #quieter:active,
-#louder:active {
-  background: rgba(55, 53, 47, 0.16);
-  cursor: pointer;
+#louder:active,
+.email-input:active {
+  background: var(--notion-active-color);
+}
+
+::placeholder {
+  color: var(--notion-font-color);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  color: var(--notion-font-color);
+}
+
+::-ms-input-placeholder {
+  color: var(--notion-font-color);
 }
