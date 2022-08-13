@@ -10,6 +10,48 @@ body {
   min-height: auto;
 }
 
+/* Restyles for most clickable element */
+#quieter,
+#louder,
+.email-input,
+.email-button {
+  border: 0;
+  border-radius: 5px;
+  background-color: white;
+  color: var(--notion-font-color);
+  cursor: pointer;
+}
+
+#quieter:hover,
+#louder:hover,
+.email-label:hover,
+.email-input:hover,
+.email-button:hover {
+  background: var(--notion-hover-color);
+}
+
+#quieter:active,
+#louder:active,
+.email-input:active,
+.email-button:active {
+  background: var(--notion-active-color);
+}
+
+::placeholder {
+  color: var(--notion-font-color);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  color: var(--notion-font-color);
+}
+
+::-ms-input-placeholder {
+  color: var(--notion-font-color);
+}
+
+/* END restyles */
+
 .volume-controls {
   display: flex;
   align-items: center;
@@ -49,17 +91,16 @@ body {
 
 .email-container {
   padding: 8px;
-  color: var(--notion-font-color);
 }
 
 .email-input-container {
   display: flex;
   font-size: 14px;
-  align-items: center;
+  align-items: stretch;
 }
 
 .email-container > p {
-  font-size: 8px;
+  font-size: 9px;
   margin-top: 2px;
   color: var(--notion-font-color);
 }
@@ -85,6 +126,14 @@ body {
   width: 100%;
   padding: 6px 8px 7px;
   outline: white;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.email-button {
+  padding: 6px 8px 7px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .email-input:focus:not(:active) {
@@ -93,37 +142,8 @@ body {
     rgb(15 15 15 / 10%) 0px 3px 6px, rgb(15 15 15 / 20%) 0px 9px 24px;
 }
 
-#quieter,
-#louder,
-.email-input {
-  border: 0;
-  border-radius: 5px;
-  background-color: white;
-  cursor: pointer;
-}
-
-#quieter:hover,
-#louder:hover,
-.email-label:hover,
-.email-input:hover {
-  background: var(--notion-hover-color);
-}
-
-#quieter:active,
-#louder:active,
-.email-input:active {
-  background: var(--notion-active-color);
-}
-
-::placeholder {
-  color: var(--notion-font-color);
-  opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder {
-  color: var(--notion-font-color);
-}
-
-::-ms-input-placeholder {
-  color: var(--notion-font-color);
+.email-input:focus:not(:active) + .email-button {
+  background: white;
+  box-shadow: rgb(15 15 15 / 5%) 0px 0px 0px 1px,
+    rgb(15 15 15 / 10%) 0px 3px 6px, rgb(15 15 15 / 20%) 0px 9px 24px;
 }

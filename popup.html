@@ -19,15 +19,27 @@
       </button>
     </div>
     <div class="email-container">
-      <div class="email-input-container">
+      <form
+        class="email-input-container"
+        action="https://eoaig70vd7x47x4.m.pipedream.net"
+      >
         <div class="email-label">
           <img src="assets/at-icon.svg" height="16px" width="16px" />
           Email
         </div>
         <input class="email-input" type="text" placeholder="Empty" />
-      </div>
-      <p>I'll let you know when I make something else for notion!</p>
+        <button class="email-button" type="submit">
+          <img src="assets/checkmark.svg" height="16px" width="16px" />
+        </button>
+        <input type="hidden" name="source" value="notion-ding_popup" />
+      </form>
+      <p>Put in your email - I'll let you know when I build something new!</p>
     </div>
     <script src="./popup.js"></script>
   </body>
 </html>
+
+<!-- 
+  1. I need to be able to submit the html form to pipedream. Either using preventDefault and js or other controls
+  2. I need to extract the values from the body in pipedream and pass them to our spreadsheet
+-->
