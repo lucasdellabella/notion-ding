@@ -12,12 +12,20 @@ body {
 
 /* Restyles for most clickable element */
 #quieter,
+#louder {
+  background-color: var(--notion-background-color);
+}
+.email-input,
+.email-button {
+  background-color: white;
+}
+
+#quieter,
 #louder,
 .email-input,
 .email-button {
   border: 0;
   border-radius: 5px;
-  background-color: white;
   color: var(--notion-font-color);
   cursor: pointer;
 }
@@ -26,7 +34,8 @@ body {
 #louder:hover,
 .email-label:hover,
 .email-input:hover,
-.email-button:hover {
+.email-button:hover,
+.email-input:hover ~ .email-button {
   background: var(--notion-hover-color);
 }
 
@@ -58,7 +67,6 @@ body {
   justify-content: center;
   padding: 5px;
   background: var(--notion-background-color);
-  border-bottom: 2px dashed var(--notion-active-color);
 }
 
 .volume-controls > * {
@@ -90,7 +98,11 @@ body {
 }
 
 .email-container {
+  background-color: white;
   padding: 8px;
+  border-top: 2px dashed var(--notion-active-color);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .email-input-container {
@@ -135,6 +147,36 @@ body {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
+
+/* Email input validation */
+.valid.email-input {
+  margin: -1px 0 -1px -1px;
+  border-top: 1px solid #66ff75;
+  border-bottom: 1px solid #66ff75;
+  border-left: 1px solid #66ff75;
+}
+
+.valid.email-input ~ .email-button {
+  margin: -1px 0;
+  border-top: 1px solid #66ff75;
+  border-bottom: 1px solid #66ff75;
+  border-right: 1px solid #66ff75;
+}
+
+.invalid.email-input {
+  margin: -1px 0 -1px -1px;
+  border-top: 1px solid #ff6666;
+  border-bottom: 1px solid #ff6666;
+  border-left: 1px solid #ff6666;
+}
+
+.invalid.email-input ~ .email-button {
+  margin: -1px 0;
+  border-top: 1px solid #ff6666;
+  border-bottom: 1px solid #ff6666;
+  border-right: 1px solid #ff6666;
+}
+/* END Email input validation*/
 
 .email-input:focus:not(:active) {
   background: white;

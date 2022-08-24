@@ -15,6 +15,8 @@ document.addEventListener("click", (event) => {
 
   if (completed) {
     chrome.storage.sync.get(["volume"], ({ volume }) => {
+      if (volume === 0) return;
+
       const ding = new Audio(url);
       ding.volume = getNonLinearVolumeLevel(volume);
       ding.play();

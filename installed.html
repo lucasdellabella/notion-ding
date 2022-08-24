@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="popup.css" />
+    <link rel="stylesheet" href="installed.css" />
+  </head>
+  <body>
+    <div id="global-container">
+      <h3>Set the volume before you go!</h3>
+      <div id="volume-controls" class="volume-controls">
+        <button id="quieter" class="volume-btn">
+          <img src="assets/volume-down-fill.svg" height="32px" width="32px" />
+        </button>
+        <div id="level-container">
+          <div id="level">5</div>
+          <div id="level-decorator"><p>/10</p></div>
+          <div id="level-border"></div>
+        </div>
+        <button id="louder" class="volume-btn">
+          <img src="assets/volume-up-fill.svg" height="32px" width="32px" />
+        </button>
+      </div>
+      <div id="email-container" class="email-container">
+        <form
+          id="email-input-container"
+          class="email-input-container"
+          action="https://eoaig70vd7x47x4.m.pipedream.net"
+          method="post"
+          novalidate
+        >
+          <div class="email-label">
+            <img src="assets/at-icon.svg" height="16px" width="16px" />
+            Email
+          </div>
+          <input
+            type="text"
+            name="email"
+            placeholder="Empty"
+            required
+            id="email-input"
+            class="email-input"
+          />
+          <button class="email-button" type="submit">
+            <img src="assets/checkmark.svg" height="16px" width="16px" />
+          </button>
+          <input type="hidden" name="name" value="" />
+          <input type="hidden" name="source" value="notion-ding_popup" />
+        </form>
+        <p>Put in your email - I'll let you know when I build something new!</p>
+      </div>
+    </div>
+    <script src="./popup.js"></script>
+  </body>
+</html>
+
+<!-- 
+  1. I need to be able to submit the html form to pipedream. Either using preventDefault and js or other controls
+  2. I need to extract the values from the body in pipedream and pass them to our spreadsheet
+-->

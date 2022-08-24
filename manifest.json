@@ -1,9 +1,9 @@
 {
   "name": "Notion Ding!",
-  "description": "Goes ding when you check a checkbox. Yes thats it.",
+  "description": "Goes ding when you check a notion checkbox. That's it.",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": ["storage"],
+  "permissions": ["storage", "tabs"],
   "content_scripts": [
     {
       "matches": ["https://*.notion.so/*"],
