@@ -8,7 +8,7 @@ const getNonLinearVolumeLevel = (volume) => {
 };
 
 document.addEventListener("click", (event) => {
-  const completed = event.path
+  const completed = event.composedPath()
     .map((e) => e.classList)
     .filter(Boolean)
     .some((classList) => classList.contains("checkboxSquare"));

@@ -42,7 +42,7 @@ const setVolumeControlsToRingOnClick = () => {
   };
 
   document.addEventListener("click", (event) => {
-    const completed = event.path
+    const completed = event.composedPath()
       .map((e) => e.classList)
       .filter(Boolean)
       .some((classList) => classList.contains("volume-btn"));
@@ -80,8 +80,6 @@ document
       chrome.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
         chrome.storage.sync.set({ providedEmail: true });
         document.getElementById("email-input-container").submit();
-        if (tabs[0].url.startsWith("chrome-extension://"))
-          chrome.tabs.remove(tabs[0].id, function () {});
       });
     } else {
       markInvalid();
