@@ -8,12 +8,12 @@ const getNonLinearVolumeLevel = (volume) => {
 };
 
 document.addEventListener("click", (event) => {
-  const completed = event.composedPath()
-    .map((e) => e.classList)
-    .filter(Boolean)
-    .some((classList) => classList.contains("checkboxSquare"));
+  const path = event.composedPath()
+  const checkbox = path.find(element => element.matches("input[type=checkbox]"))
+  const isCheckboxClick = !!checkbox;
+  const isUnchecked = checkbox.parentElement.getElementsByClassName('check').length === 0
 
-  if (completed) {
+  if (isCheckboxClick && isUnchecked) {
     chrome.storage.sync.get(["volume"], ({ volume }) => {
       if (volume === 0) return;
 
